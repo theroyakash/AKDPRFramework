@@ -13,7 +13,7 @@ install_requires = [x.strip() for x in all_reqs if 'git+' not in x]
 dependency_links = [x.strip().replace('git+', '') for x in all_reqs if x.startswith('git+')]
 
 setup(
-    name='akdprframework',
+    name='AKDPRFramework',
     version=__version__,
     description='AKDPRFramework is a framework for doing fundamental deep learning research.',
     url='https://github.com/theroyakash/AKDPRFramework',

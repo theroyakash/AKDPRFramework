@@ -4,6 +4,23 @@
 
 import numpy as np
 
+
+class StochasticGradientDescent():
+    def __init__(self, learning_rate=0.01, momentum=0):
+        self.learning_rate = learning_rate 
+        self.momentum = momentum
+        self.w_update = None
+
+    def update(self, w, gradient_wrt_w):
+        # If not initialized
+        if self.w_update is None:
+            self.w_update = np.zeros(np.shape(w))
+        # Use momentum if set
+        self.w_update = self.momentum * self.w_update + (1 - self.momentum) * gradient_wrt_w
+        # Move against the gradient to minimize loss
+        return w - self.learning_rate * self.w_update
+
+
 # Adam
 class Adam():
     '''
@@ -31,9 +48,9 @@ class Adam():
         m_hat = self.m / (1 - self.b1)
         v_hat = self.v / (1 - self.b2)
 
-        self.w_updt = self.learning_rate * m_hat / (np.sqrt(v_hat) + self.epsilon)
+        self.w_update = self.learning_rate * m_hat / (np.sqrt(v_hat) + self.epsilon)
 
-        return w - self.w_updt
+        return w - self.w_update
 
 
 class RMSprop():
@@ -43,13 +60,13 @@ class RMSprop():
         self.epsilon = 1e-8
         self.rho = rho
 
-    def update(self, w, grad_wrt_w):
+    def update(self, w, gradient_wrt_w):
         # If not initialized
         if self.Eg is None:
-            self.Eg = np.zeros(np.shape(grad_wrt_w))
+            self.Eg = np.zeros(np.shape(gradient_wrt_w))
 
-        self.Eg = self.rho * self.Eg + (1 - self.rho) * np.power(grad_wrt_w, 2)
+        self.Eg = self.rho * self.Eg + (1 - self.rho) * np.power(gradient_wrt_w, 2)
 
         # Divide the learning rate for a weight by a running average of the magnitudes of recent
         # gradients for that weight
-        return w - self.learning_rate *  grad_wrt_w / np.sqrt(self.Eg + self.epsilon)
+        return w - self.learning_rate *  gradient_wrt_w / np.sqrt(self.Eg + self.epsilon)

@@ -7,7 +7,7 @@ class Layer(object):
 
     def set_input_shape(self, shape):
         """
-        Sets the shape that the layer expects of the input in the forward pass method 
+        Sets the shape that the layer expects of the input in the forward pass method
         """
         self.input_shape = shape
 
@@ -34,22 +34,22 @@ class Layer(object):
         Propogates the accumulated gradient backwards in the network.
         If the has trainable weights then these weights are also tuned in this method.
         As input (accum_grad) it receives the gradient with respect to the output of the layer and
-        returns the gradient with respect to the output of the previous layer. 
+        returns the gradient with respect to the output of the previous layer.
         """
         raise NotImplementedError()
 
     def output_shape(self):
         """
-        The shape of the output produced by forward_pass 
+        The shape of the output produced by forward_pass
         """
         raise NotImplementedError()
 
-class Dense:
+class Dense(Layer):
     """
     A fully-connected NN layer.
-    Parameters:
-        - units (int): The number of neurons in the layer.
-        - input_shape (tuple): The expected input shape of the layer. For dense layers a single digit specifying the number of features of the input. Must be specified if it is the first layer in the network.
+        Parameters:
+            - units (int): The number of neurons in the layer.
+            - input_shape (tuple): The expected input shape of the layer. For dense layers a single digit specifying the number of features of the input. Must be specified if it is the first layer in the network.
     """
     def __init__(self, units, input_shape=None, trainable = True):
         self.layer_input = None
@@ -58,13 +58,13 @@ class Dense:
         self.trainable = True
         self.W = None
         self.w0 = None
-    
+
     def initialize(self, optimizer):
         # Initialize the weights
         limit = 1 / math.sqrt(self.input_shape[0])
         self.W  = np.random.uniform(-limit, limit, (self.input_shape[0], self.units))
         self.w0 = np.zeros((1, self.units))
-        
+
         # Weight optimizers
         self.W_opt  = copy.copy(optimizer)
         self.w0_opt = copy.copy(optimizer)

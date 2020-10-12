@@ -41,7 +41,6 @@ class Regression(object):
     def __init__(self, iterations, learning_rate, regularization):
         self.iterations = iterations
         self.learning_rate = learning_rate
-        self.regularization = regularization()
     
     def random_initialization(self, number_of_features):
         '''

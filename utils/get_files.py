@@ -14,5 +14,3 @@ def downloadImageFromURL(url):
     image = Image.open(io.BytesIO(b))
     image.save("saved.jpg")
     print(f'Image saved at {os.getcwd()}/saved.jpg')
-
-downloadImageFromURL('https://images.unsplash.com/photo-1561731216-c3a4d99437d5')

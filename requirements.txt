@@ -1,6 +1,7 @@
 matplotlib
 numpy
 sklearn
+tqdm
 pandas
 cvxopt
 scipy

@@ -1,1 +1,1 @@
-from .regression import LinearRegression
+from .reg import LinearRegression

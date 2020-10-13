@@ -4,6 +4,7 @@ from PIL import Image
 import io
 import os
 import sys
+from placeholderfile.generateName import generateName as gn
 
 def downloadImageFromURL(url):
     '''
@@ -12,5 +13,6 @@ def downloadImageFromURL(url):
     '''
     b = requests.get(url).content
     image = Image.open(io.BytesIO(b))
-    image.save("saved.jpg")
-    print(f'Image saved at {os.getcwd()}/saved.jpg')
+    filename = gn(suffix='.jpg', prefix=None, seed=None)
+    image.save(filename)
+    print(f'Image saved at {os.getcwd()}/{filename}')

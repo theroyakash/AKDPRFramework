@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import copy
-from akdprframework.dl.activations import Sigmoid, ReLU, Softmax
+from AKDPRFramework.dl.activations import Sigmoid, ReLU, Softmax
 
 class Layer(object):
 

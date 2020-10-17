@@ -4,8 +4,7 @@ sklearn
 placeholderfile
 tqdm
 pandas
-cvxopt
+av
 scipy
-progressbar33
 terminaltables
 gym

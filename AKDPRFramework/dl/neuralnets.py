@@ -12,7 +12,7 @@ class NeuralNetworks():
             - vaildation_data: Tuple containing lables and example (X,y)
     '''
 
-    def __init__(self, vaildation_data=None, loss, optimizer):
+    def __init__(self, loss, optimizer, vaildation_data=None):
 
         if vaildation_data is not None:
             X, y = vaildation_data

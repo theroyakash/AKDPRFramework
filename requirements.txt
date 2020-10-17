@@ -1,5 +1,7 @@
 matplotlib
 numpy
+torch
+torchvision
 sklearn
 placeholderfile
 tqdm

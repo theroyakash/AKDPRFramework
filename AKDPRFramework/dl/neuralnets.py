@@ -80,7 +80,7 @@ class NeuralNetworks():
         Model evaluation over a single batch of data points
         '''
         y_pred = self._forward_pass(X)
-        loss = np.mean(self.loss_func.loss(y, y_pre))
+        loss = np.mean(self.loss_func.loss(y, y_pred))
         acc = self.loss_func.acc(y, y_pred)
 
         return loss, acc

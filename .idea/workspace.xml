@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="" />
+    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AKDPRFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AKDPRFramework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/applications/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/applications/yolo.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +20,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -29,5 +35,11 @@
       <updated>1602970083791</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="329" y="42" key="SettingsEditor" timestamp="1602970593111">
+      <screen x="0" y="25" width="1920" height="993" />
+    </state>
+    <state x="329" y="42" key="SettingsEditor/0.25.1920.993@0.25.1920.993" timestamp="1602970593111" />
   </component>
 </project>

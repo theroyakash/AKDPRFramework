@@ -36,6 +36,7 @@ class CNNBlock(nn.Module):
     def forward(self, x):
         return self.leakyReLU(self.batchnorm(self.conv(x)))
 
+
 class YOLOOriginal(nn.Module):
     def __init__(self, in_channels=3, **kwargs):
         super(YOLOOriginal, self).__init__()

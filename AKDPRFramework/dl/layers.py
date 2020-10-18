@@ -26,13 +26,13 @@ class Layer(object):
 
     def forward_pass(self, X, training):
         """
-        Propogates the signal forward in the network
+        Propagates the signal forward in the network
         """
         raise NotImplementedError()
 
     def backward_pass(self, accum_grad):
         """
-        Propogates the accumulated gradient backwards in the network.
+        Propagates the accumulated gradient backwards in the network.
         If the has trainable weights then these weights are also tuned in this method.
         As input (accum_grad) it receives the gradient with respect to the output of the layer and
         returns the gradient with respect to the output of the previous layer.
@@ -192,7 +192,7 @@ def column_to_image(cols, images_shape, filter_shape, stride, output_shape='same
 
 class Conv2D(Layer):
     """
-    A 2 dimentional Convolutional Layer.
+    A 2 dimensional Convolutional Layer.
 
     Parameters:
         - n_filters (int): The number of filters that will convolve over the input matrix. The number of channels of the output shape.
@@ -236,7 +236,7 @@ class Conv2D(Layer):
         output = self.W_col.dot(self.X_col) + self.w0
         # Reshape into (n_filters, out_height, out_width, batch_size)
         output = output.reshape(self.output_shape() + (batch_size,))
-        # Redistribute axises so that batch size comes first
+        # Redistribute axes so that batch size comes first
         return output.transpose(3, 0, 1, 2)
 
     def backward_pass(self, accum_grad):
@@ -254,7 +254,7 @@ class Conv2D(Layer):
             self.W = self.W_opt.update(self.W, grad_w)
             self.w0 = self.w0_opt.update(self.w0, grad_w0)
 
-        # Recalculate the gradient which will be propogated back to prev. layer
+        # Recalculate the gradient which will be propagated back to prev. layer
         accum_grad = self.W_col.T.dot(accum_grad)
         # Reshape from column shape to image shape
         accum_grad = column_to_image(accum_grad,

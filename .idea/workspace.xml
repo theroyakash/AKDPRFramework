@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" afterDir="false" />
-    </list>
+    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

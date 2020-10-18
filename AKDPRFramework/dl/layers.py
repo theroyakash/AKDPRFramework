@@ -1,7 +1,8 @@
 import math
 import numpy as np
 import copy
-from AKDPRFramework.dl.activations import Sigmoid, ReLU, Softmax
+from AKDPRFramework.dl.activations import Sigmoid, ReLU, Softmax, LeakyReLU
+
 
 class Layer(object):
 
@@ -44,6 +45,7 @@ class Layer(object):
         """
         raise NotImplementedError()
 
+
 class Dense(Layer):
     """
     A fully-connected NN layer.
@@ -51,7 +53,8 @@ class Dense(Layer):
             - units (int): The number of neurons in the layer.
             - input_shape (tuple): The expected input shape of the layer. For dense layers a single digit specifying the number of features of the input. Must be specified if it is the first layer in the network.
     """
-    def __init__(self, units, input_shape=None, trainable = True):
+
+    def __init__(self, units, input_shape=None, trainable=True):
         self.layer_input = None
         self.input_shape = input_shape
         self.units = units
@@ -62,11 +65,11 @@ class Dense(Layer):
     def initialize(self, optimizer):
         # Initialize the weights
         limit = 1 / math.sqrt(self.input_shape[0])
-        self.W  = np.random.uniform(-limit, limit, (self.input_shape[0], self.units))
+        self.W = np.random.uniform(-limit, limit, (self.input_shape[0], self.units))
         self.w0 = np.zeros((1, self.units))
 
         # Weight optimizers
-        self.W_opt  = copy.copy(optimizer)
+        self.W_opt = copy.copy(optimizer)
         self.w0_opt = copy.copy(optimizer)
 
     def parameters(self):
@@ -95,25 +98,27 @@ class Dense(Layer):
         return accum_grad
 
     def output_shape(self):
-        return (self.units, )
+        return (self.units,)
+
 
 def determine_padding(filter_shape, output_shape="same"):
-
-    # No padding
+    # Method which calculates the padding based on the specified output shape and the
+    # shape of the filters
+    # Valid padding == No padding. The size of the data will shrink layer by layer
     if output_shape == "valid":
         return (0, 0), (0, 0)
     # Pad so that the output shape is the same as input shape (given that stride=1)
     elif output_shape == "same":
         filter_height, filter_width = filter_shape
 
-        # Derived from:
         # output_height = (height + pad_h - filter_height) / stride + 1
         # In this case output_height = height and stride = 1. This gives the
         # expression for the padding below.
-        pad_h1 = int(math.floor((filter_height - 1)/2))
-        pad_h2 = int(math.ceil((filter_height - 1)/2))
-        pad_w1 = int(math.floor((filter_width - 1)/2))
-        pad_w2 = int(math.ceil((filter_width - 1)/2))
+
+        pad_h1 = int(math.floor((filter_height - 1) / 2))
+        pad_h2 = int(math.ceil((filter_height - 1) / 2))
+        pad_w1 = int(math.floor((filter_width - 1) / 2))
+        pad_w2 = int(math.ceil((filter_width - 1) / 2))
 
         return (pad_h1, pad_h2), (pad_w1, pad_w2)
 
@@ -137,6 +142,7 @@ def get_im2col_indices(images_shape, filter_shape, padding, stride=1):
     k = np.repeat(np.arange(channels), filter_height * filter_width).reshape(-1, 1)
 
     return (k, i, j)
+
 
 # Method which turns the image shaped input to column shape.
 # Used during the forward pass.
@@ -181,7 +187,7 @@ def column_to_image(cols, images_shape, filter_shape, stride, output_shape='same
     np.add.at(images_padded, (slice(None), k, i, j), cols)
 
     # Return image without padding
-    return images_padded[:, :, pad_h[0]:height+pad_h[0], pad_w[0]:width+pad_w[0]]
+    return images_padded[:, :, pad_h[0]:height + pad_h[0], pad_w[0]:width + pad_w[0]]
 
 
 class Conv2D(Layer):
@@ -195,6 +201,7 @@ class Conv2D(Layer):
         - padding (string): Either 'same' or 'valid'. 'same' results in padding being added so that the output height and width matches the input height and width. For 'valid' no padding is added.
         - stride (int): The stride length of the filters during the convolution over the input.
     """
+
     def __init__(self, n_filters, filter_shape, input_shape=None, padding='same', stride=1):
         self.n_filters = n_filters
         self.filter_shape = filter_shape
@@ -208,10 +215,10 @@ class Conv2D(Layer):
         filter_height, filter_width = self.filter_shape
         channels = self.input_shape[0]
         limit = 1 / math.sqrt(np.prod(self.filter_shape))
-        self.W  = np.random.uniform(-limit, limit, size=(self.n_filters, channels, filter_height, filter_width))
+        self.W = np.random.uniform(-limit, limit, size=(self.n_filters, channels, filter_height, filter_width))
         self.w0 = np.zeros((self.n_filters, 1))
         # Weight optimizers
-        self.W_opt  = copy.copy(optimizer)
+        self.W_opt = copy.copy(optimizer)
         self.w0_opt = copy.copy(optimizer)
 
     def parameters(self):
@@ -228,9 +235,9 @@ class Conv2D(Layer):
         # Calculate output
         output = self.W_col.dot(self.X_col) + self.w0
         # Reshape into (n_filters, out_height, out_width, batch_size)
-        output = output.reshape(self.output_shape() + (batch_size, ))
+        output = output.reshape(self.output_shape() + (batch_size,))
         # Redistribute axises so that batch size comes first
-        return output.transpose(3,0,1,2)
+        return output.transpose(3, 0, 1, 2)
 
     def backward_pass(self, accum_grad):
         # Reshape accumulated gradient into column shape
@@ -251,10 +258,10 @@ class Conv2D(Layer):
         accum_grad = self.W_col.T.dot(accum_grad)
         # Reshape from column shape to image shape
         accum_grad = column_to_image(accum_grad,
-                                self.layer_input.shape,
-                                self.filter_shape,
-                                stride=self.stride,
-                                output_shape=self.padding)
+                                     self.layer_input.shape,
+                                     self.filter_shape,
+                                     stride=self.stride,
+                                     output_shape=self.padding)
 
         return accum_grad
 
@@ -264,3 +271,56 @@ class Conv2D(Layer):
         output_height = (height + np.sum(pad_h) - self.filter_shape[0]) / self.stride + 1
         output_width = (width + np.sum(pad_w) - self.filter_shape[1]) / self.stride + 1
         return self.n_filters, int(output_height), int(output_width)
+
+
+class Flatten(Layer):
+    def __init__(self, input_shape=None):
+        """
+        Deep learning flatten layer, Flattens the input. Does not affect the batch size.
+        Args:
+            input_shape: Input shape from the previous layer coming in
+        """
+        self.previous_shape = None
+        self.trainable = True
+        self.input_shape = input_shape
+
+    def forward_pass(self, X, training):
+        self.previous_shape = X.shape
+        return X.reshape((X.shape[0], -1))
+
+    def backward_pass(self, accum_grad):
+        return accum_grad.reshape(self.previous_shape)
+
+    def output_shape(self):
+        return (np.prod(self.input_shape),)
+
+
+activation_dict = {
+    'relu': ReLU,
+    'sigmoid': Sigmoid,
+    'softmax': Softmax,
+    'leakyReLU': LeakyReLU
+}
+
+
+class Activation(Layer):
+    def __int__(self, name):
+        """
+        Activation layer on a given input
+        """
+        self.name = name
+        self.activation_func = activation_dict[str(name)]()
+        self.trainable = True
+
+    def layer_name(self):
+        return f'Activation Layer: {self.activation_func.__class__.__name__}'
+
+    def forward_pass(self, X, training):
+        self.layer_input = X
+        return self.activation_func(X)
+
+    def backward_pass(self, accum_grad):
+        return accum_grad * self.activation_func.gradient(self.layer_input)
+
+    def output_shape(self):
+        return self.input_shape

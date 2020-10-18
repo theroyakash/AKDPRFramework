@@ -20,27 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/make.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.applications.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.dl.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.loss.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.mlops.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.optim.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.utils.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.video.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/modules.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/neuralnets.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/neuralnets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/loss/loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/loss/loss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/optim/optimizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/optim/optimizers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/utils/get_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/utils/get_files.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/conf.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

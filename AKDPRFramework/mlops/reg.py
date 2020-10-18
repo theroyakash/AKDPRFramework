@@ -108,13 +108,13 @@ class LinearRegression(Regression):
 
 
 class LogisticRegression():
-    '''
+    """
     Logistic Regression Class
 
         Args:
             - ``learning_rate``: Mention the learning Rate for the training. Defaults to 1e-3
             - ``gradient_descent``: True or False depending upon training or prediction
-    '''
+    """
     def __init__(self, learning_rate=1e-3, gradient_descent=True):
         self.params = None
         self.learning_rate = learning_rate

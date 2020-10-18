@@ -1,16 +1,16 @@
 import numpy as np
 from tqdm import tqdm
 from terminaltables import AsciiTable
-
+from AKDPRFramework.utils.dataops import batch_iterator
 
 class NeuralNetworks():
-    '''
+    """
     Neural Network Learning Class.
         Args:
-            - loss: Loss class defined in loss module
-            - optimizer: optimizer class from optim.optimizer
-            - vaildation_data: Tuple containing lables and example (X,y)
-    '''
+            - ``loss``: Loss class defined in loss module
+            - ``optimizer``: optimizer class from optim.optimizer
+            - ``validation_data``: Tuple containing lables and example (X,y)
+    """
 
     def __init__(self, loss, optimizer, vaildation_data=None):
 
@@ -90,10 +90,10 @@ class NeuralNetworks():
         Call to start the training
 
             Args:
-                - X: X the input data points
-                - y: lables for the data points
-                - epochs: Specify the number of epochs
-                - batch_size: Total batch size
+                - ``X``: X the input data points
+                - ``y``: lables for the data points
+                - ``epochs``: Specify the number of epochs
+                - ``batch_size``: Total batch size
         '''
 
         for _ in tqdm(range(epochs)):

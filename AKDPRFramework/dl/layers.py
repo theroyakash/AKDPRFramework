@@ -50,8 +50,8 @@ class Dense(Layer):
     """
     A fully-connected NN layer.
         Parameters:
-            - units (int): The number of neurons in the layer.
-            - input_shape (tuple): The expected input shape of the layer. For dense layers a single digit specifying the number of features of the input. Must be specified if it is the first layer in the network.
+            - ``units`` (int): The number of neurons in the layer.
+            - ``input_shape`` (tuple): The expected input shape of the layer. For dense layers a single digit specifying the number of features of the input. Must be specified if it is the first layer in the network.
     """
 
     def __init__(self, units, input_shape=None, trainable=True):
@@ -195,11 +195,11 @@ class Conv2D(Layer):
     A 2 dimensional Convolutional Layer.
 
     Parameters:
-        - n_filters (int): The number of filters that will convolve over the input matrix. The number of channels of the output shape.
-        - filter_shape (tuple): A tuple (filter_height, filter_width).
-        - input_shape (tuple): The shape of the expected input of the layer. (batch_size, channels, height, width) Only needs to be specified for first layer in the network.
-        - padding (string): Either 'same' or 'valid'. 'same' results in padding being added so that the output height and width matches the input height and width. For 'valid' no padding is added.
-        - stride (int): The stride length of the filters during the convolution over the input.
+        - ``n_filters`` (int): The number of filters that will convolve over the input matrix. The number of channels of the output shape.
+        - ``filter_shape`` (tuple): A tuple (filter_height, filter_width).
+        - ``input_shape`` (tuple): The shape of the expected input of the layer. (batch_size, channels, height, width) Only needs to be specified for first layer in the network.
+        - ``padding`` (string): Either 'same' or 'valid'. 'same' results in padding being added so that the output height and width matches the input height and width. For 'valid' no padding is added.
+        - ``stride`` (int): The stride length of the filters during the convolution over the input.
     """
 
     def __init__(self, n_filters, filter_shape, input_shape=None, padding='same', stride=1):
@@ -278,7 +278,7 @@ class Flatten(Layer):
         """
         Deep learning flatten layer, Flattens the input. Does not affect the batch size.
         Args:
-            input_shape: Input shape from the previous layer coming in
+            ``input_shape``: Input shape from the previous layer coming in
         """
         self.previous_shape = None
         self.trainable = True

@@ -1,6 +1,8 @@
-# Optimizer module
-# Implementations of most used optimization algorithms
-# Adam is implemented based on github.com/theroyakash/Adam
+"""
+Optimizer module
+Implementations of most used optimization algorithms
+Adam is implemented based on github.com/theroyakash/Adam
+"""
 
 import numpy as np
 
@@ -23,10 +25,10 @@ class StochasticGradientDescent():
 
 # Adam
 class Adam():
-    '''
+    """
     Implementation of the Adam Optimization algorithms
-    To import call `from AKDPRFramework.optim.optimizers import Adam` 
-    '''
+    To import call ``from AKDPRFramework.optim.optimizers import Adam``
+    """
     def __init__(self, learning_rate = 1e-3, epsilon=1e-8, b1=0.9, b2=0.999):
         self.learning_rate = learning_rate
         self.epsilon = epsilon

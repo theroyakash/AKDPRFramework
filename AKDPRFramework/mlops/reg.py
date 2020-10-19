@@ -60,15 +60,15 @@ class Regression(object):
     def fit(self, X, y):
         # Insert constant ones for bias weights
         X = np.insert(X, 0, 1, axis=1)
-        self.training_errors = []
+        self.training_errors = []        # Record of MSE errors during training
         self.random_initialization(number_of_features=X.shape[1])
 
         for _ in tqdm(range(self.iterations)):
             y_pred = X.dot(self.w)
-            # Calculate l2 loss
+            # MSE
             mse = np.mean(0.5 * (y - y_pred) ** 2 + self.regularization(self.w))
             self.training_errors.append(mse)
-            # Gradient of l2 loss w.r.t w
+            # Gradient Calculation
             grad_w = -(y - y_pred).dot(X) + self.regularization.grad(self.w)
             # Update the weights
             self.w -= self.learning_rate * grad_w
@@ -79,6 +79,16 @@ class Regression(object):
         y_pred = X.dot(self.w)
         return y_pred
 
+    def get_weights(self):
+        """
+        Returns weights at the end of training.
+        Call like this
+        >>> model = LinearRegression()
+        >>> weights_before_training = model.get_weights()     # Random Initialization
+        >>> model.fit(X, y)
+        >>> weights = model.get_weights() # Updated weights after training
+        """
+        return self.w
 
 class LinearRegression(Regression):
     """
@@ -94,7 +104,6 @@ class LinearRegression(Regression):
         super(LinearRegression, self).__init__(iterations=iterations,
                                                learning_rate=learning_rate)
         self.gradient_descent = gradient_descent
-        # No regularization
         self.regularization = lambda x: 0
         self.regularization.grad = lambda x: 0
 
@@ -112,13 +121,13 @@ class LinearRegression(Regression):
             super(LinearRegression, self).fit(X, y)
 
 
-class LogisticRegression():
+class LogisticRegression:
     """
     Logistic Regression Class
 
         Args:
             - ``learning_rate``: Mention the learning Rate for the training. Defaults to 1e-3
-            - ``gradient_descent``: True or False depending upon training or prediction
+            - ``gradient_descent``: True or False depending upon training with gradient or batch optimization by least squares.
     """
 
     def __init__(self, learning_rate=1e-3, gradient_descent=True):
@@ -147,8 +156,7 @@ class LogisticRegression():
                 # Make a diagonal matrix of the sigmoid gradient column vector
                 diag_gradient = diag(self.sigmoid.gradient(X.dot(self.params)))
                 # Batch opt:
-                self.param = np.linalg.pinv(X.T.dot(diag_gradient).dot(X)).dot(X.T).dot(
-                    diag_gradient.dot(X).dot(self.param) + y - y_pred)
+                self.param = np.linalg.pinv(X.T.dot(diag_gradient).dot(X)).dot(X.T).dot(diag_gradient.dot(X).dot(self.param) + y - y_pred)
 
     def predict(self, X):
         y_pred = np.round(self.sigmoid(X.dot(self.param))).astype(int)

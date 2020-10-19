@@ -20,22 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="documentation website added">
-      <change afterPath="$PROJECT_DIR$/AKDPRFramework/metrics/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AKDPRFramework/metrics/accuracy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.metrics.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/activations.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/activations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.applications.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.applications.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.dl.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.dl.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.loss.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.loss.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.mlops.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.mlops.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.optim.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.optim.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.utils.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.utils.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.video.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.video.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

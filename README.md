@@ -1,6 +1,10 @@
 # AKDPRFramework
 
 AKDPRFramework is a framework for deep learning research. It's currently under development. All the code is written in `numpy` from scratch. Open a new PR/ issue to start contributing.
+### Docs
+See the docs [here](https://akdpr.netlify.app)
+### Website
+You can also visit the website for this open source project [here](https://bit.ly/AKDPRFramework)
 
 ## Setup
 - First download/clone this repo like `git clone https://github.com/theroyakash/AKDPRFramework.git`

@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="documentation website added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/activations.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/activations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

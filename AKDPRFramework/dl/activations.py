@@ -47,7 +47,7 @@ class Sigmoid:
 
 
 # Softmax activations
-class Softmax():
+class Softmax:
     def __call__(self, x):
         e_x = np.exp(x - np.max(x, axis=-1, keepdims=True))
         return e_x / np.sum(e_x, axis=-1, keepdims=True)
@@ -58,7 +58,7 @@ class Softmax():
 
 
 # tanh activations
-class TanH():
+class TanH:
     def __call__(self, x):
         return 2 / (1 + np.exp(-2 * x)) - 1
 

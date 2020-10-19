@@ -5,25 +5,28 @@ import math
 from AKDPRFramework.dl.activations import Sigmoid
 from AKDPRFramework.utils.dataops import diag
 
+
 class L1():
     def __init__(self, alpha):
         self.alpha = alpha
-    
+
     def __call__(self, w):
         return self.alpha * np.linalg.norm(w)
 
     def grad(self, w):
         return self.alpha * np.sign(w)
 
+
 class L2():
     def __init__(self, alpha):
         self.alpha = alpha
-    
+
     def __call__(self, w):
-        return self.alpha * 0.5 *  w.T.dot(w)
+        return self.alpha * 0.5 * w.T.dot(w)
 
     def grad(self, w):
         return self.alpha * w
+
 
 class L1L2():
     def __init__(self, alpha, l1_ratio=0.5):
@@ -32,7 +35,7 @@ class L1L2():
 
     def __call__(self, w):
         l1_contr = self.l1_ratio * np.linalg.norm(w)
-        l2_contr = (1 - self.l1_ratio) * 0.5 * w.T.dot(w) 
+        l2_contr = (1 - self.l1_ratio) * 0.5 * w.T.dot(w)
         return self.alpha * (l1_contr + l2_contr)
 
     def grad(self, w):
@@ -40,20 +43,21 @@ class L1L2():
         l2_contr = (1 - self.l1_ratio) * w
         return self.alpha * (l1_contr + l2_contr)
 
+
 class Regression(object):
     def __init__(self, iterations, learning_rate):
         self.iterations = iterations
         self.learning_rate = learning_rate
         self.regularization = lambda x: 0
-    
+
     def random_initialization(self, number_of_features):
         '''
         Random initialization of weights.
         '''
         lim = 1 / math.sqrt(number_of_features)
-        self.w = np.random.uniform(-lim, lim, (number_of_features, ))
+        self.w = np.random.uniform(-lim, lim, (number_of_features,))
 
-    def fit(self,X, y):
+    def fit(self, X, y):
         # Insert constant ones for bias weights
         X = np.insert(X, 0, 1, axis=1)
         self.training_errors = []
@@ -62,7 +66,7 @@ class Regression(object):
         for _ in tqdm(range(self.iterations)):
             y_pred = X.dot(self.w)
             # Calculate l2 loss
-            mse = np.mean(0.5 * (y - y_pred)**2 + self.regularization(self.w))
+            mse = np.mean(0.5 * (y - y_pred) ** 2 + self.regularization(self.w))
             self.training_errors.append(mse)
             # Gradient of l2 loss w.r.t w
             grad_w = -(y - y_pred).dot(X) + self.regularization.grad(self.w)
@@ -85,9 +89,10 @@ class LinearRegression(Regression):
             - ``learning_rate``: The step length that will be used when updating the weights.
             - ``gradient_descent``: True or False depending if gradient descent should be used when training. If False then we use batch optimization by least squares.
     """
+
     def __init__(self, iterations=1000, learning_rate=1e-3, gradient_descent=True):
         super(LinearRegression, self).__init__(iterations=iterations,
-                                            learning_rate=learning_rate)
+                                               learning_rate=learning_rate)
         self.gradient_descent = gradient_descent
         # No regularization
         self.regularization = lambda x: 0
@@ -115,17 +120,18 @@ class LogisticRegression():
             - ``learning_rate``: Mention the learning Rate for the training. Defaults to 1e-3
             - ``gradient_descent``: True or False depending upon training or prediction
     """
+
     def __init__(self, learning_rate=1e-3, gradient_descent=True):
         self.params = None
         self.learning_rate = learning_rate
         self.gradient_descent = gradient_descent
         self.sigmoid = Sigmoid()
-    
+
     def _initialize_parameters(self, X):
         number_of_features = np.shape(X)[1]
         lim = 1 / math.sqrt(number_of_features)
 
-        self.params = np.random.uniform(-lim, lim, (number_of_features, ))
+        self.params = np.random.uniform(-lim, lim, (number_of_features,))
 
     def fit(self, X, y, n_iterations=1000):
         self._initialize_parameters(X)
@@ -141,7 +147,8 @@ class LogisticRegression():
                 # Make a diagonal matrix of the sigmoid gradient column vector
                 diag_gradient = diag(self.sigmoid.gradient(X.dot(self.params)))
                 # Batch opt:
-                self.param = np.linalg.pinv(X.T.dot(diag_gradient).dot(X)).dot(X.T).dot(diag_gradient.dot(X).dot(self.param) + y - y_pred)
+                self.param = np.linalg.pinv(X.T.dot(diag_gradient).dot(X)).dot(X.T).dot(
+                    diag_gradient.dot(X).dot(self.param) + y - y_pred)
 
     def predict(self, X):
         y_pred = np.round(self.sigmoid(X.dot(self.param))).astype(int)

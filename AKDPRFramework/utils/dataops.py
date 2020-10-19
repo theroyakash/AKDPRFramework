@@ -38,7 +38,7 @@ def to_categorical(x, n_col=None):
 
         Args:
             - ``X``: Numpy Array containing your data points
-            - ``n_col``: Number of coloum for your data. If not explicitly mentioned, it's automatically calculated.
+            - ``n_col``: Number of column for your data. If not explicitly mentioned, it's automatically calculated.
 
         Example::
             >>> import numpy as np
@@ -60,7 +60,7 @@ def to_categorical(x, n_col=None):
     """
     if not n_col:
         n_col = np.amax(x) + 1
-    
+
     one_hot = np.zeros((x.shape[0], n_col))
     one_hot[np.arange(x.shape[0]), x] = 1
     return one_hot
@@ -75,3 +75,28 @@ def diag(x):
         diagonal[i, i] = x[i]
 
     return diagonal
+
+
+def train_test_split(X, y, test_size=0.5, makeshuffle=True, seed=None):
+    """
+    Make train test split on dataset.
+
+        Args:
+            - ``X``: X dataset of numpy array
+            - ``y``: y labels for that array
+            - ``test_size``: How much percentage of data you want for your test dataset
+            - ``makeshuffle``: do you want to shuffle the data before splitting?
+            - ``seed``: mention a random seed for reproducing results
+
+        Returns:
+            ``X_train``, ``X_test``, ``y_train``, ``y_test``
+
+    """
+    if makeshuffle:
+        X, y = shuffle(X, y, seed)
+
+    split_i = len(y) - int(len(y) // (1 / test_size))
+    X_train, X_test = X[:split_i], X[split_i:]
+    y_train, y_test = y[:split_i], y[split_i:]
+
+    return X_train, X_test, y_train, y_test

@@ -19,9 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="">
+    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="documentation website added">
+      <change afterPath="$PROJECT_DIR$/AKDPRFramework/metrics/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AKDPRFramework/metrics/accuracy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.metrics.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/activations.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/activations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/dl/layers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/mlops/reg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.applications.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.applications.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.dl.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.dl.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.loss.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.loss.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.mlops.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.mlops.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.optim.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.optim.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.utils.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.utils.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/AKDPRFramework.video.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/AKDPRFramework.video.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +81,14 @@
       <option name="presentableId" value="Default" />
       <updated>1602970083791</updated>
     </task>
+    <task id="LOCAL-00001" summary="documentation website added">
+      <created>1603091897715</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603091897715</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,6 +104,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="documentation website added" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation website added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="726" y="176" key="#com.intellij.ide.util.MemberChooser" timestamp="1603013652185">

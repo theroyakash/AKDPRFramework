@@ -304,7 +304,7 @@ activation_dict = {
 
 
 class Activation(Layer):
-    def __int__(self, name):
+    def __init__(self, name):
         """
         Activation layer on a given input
         """

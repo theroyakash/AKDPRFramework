@@ -1,13 +1,13 @@
-AKDPRFramework.optim package
-============================
+AKDPRFramework.metrics package
+==============================
 
 Submodules
 ----------
 
-AKDPRFramework.optim.optimizers module
+AKDPRFramework.metrics.accuracy module
 --------------------------------------
 
-.. automodule:: AKDPRFramework.optim.optimizers
+.. automodule:: AKDPRFramework.metrics.accuracy
     :members:
     :undoc-members:
     :show-inheritance:
@@ -16,7 +16,7 @@ AKDPRFramework.optim.optimizers module
 Module contents
 ---------------
 
-.. automodule:: AKDPRFramework.optim
+.. automodule:: AKDPRFramework.metrics
     :members:
     :undoc-members:
     :show-inheritance:

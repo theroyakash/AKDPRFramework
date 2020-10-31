@@ -3,7 +3,6 @@ import requests
 from PIL import Image
 import io
 import os
-import sys
 from placeholderfile.generateName import generateName as gn
 
 

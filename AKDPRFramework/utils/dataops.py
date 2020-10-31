@@ -13,6 +13,7 @@ def shuffle(X, y, seed=None):
 
     return X[index], y[index]
 
+
 def batch_iterator(X, y=None, batch_size=32):
     """
     Batch generator class

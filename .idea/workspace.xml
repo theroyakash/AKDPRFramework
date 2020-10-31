@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="documentation website added" />
+    <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="documentation website added">
+      <change beforePath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" beforeDir="false" afterPath="$PROJECT_DIR$/AKDPRFramework/utils/dataops.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,5 +102,9 @@
       <screen x="0" y="25" width="1920" height="993" />
     </state>
     <state x="214" y="72" key="SettingsEditor/0.25.1920.993@0.25.1920.993" timestamp="1603013030666" />
+    <state x="460" y="197" key="Vcs.Push.Dialog.v2" timestamp="1604144577818">
+      <screen x="0" y="25" width="1920" height="993" />
+    </state>
+    <state x="460" y="197" key="Vcs.Push.Dialog.v2/0.25.1920.993@0.25.1920.993" timestamp="1604144577818" />
   </component>
 </project>

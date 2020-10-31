@@ -6,6 +6,7 @@ import os
 import sys
 from placeholderfile.generateName import generateName as gn
 
+
 def downloadImageFromURL(url):
     """
     Downloads Image from any image URL

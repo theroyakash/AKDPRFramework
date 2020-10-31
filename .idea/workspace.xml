@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0dfe03ae-7cb3-45fb-aca7-19648a9198fa" name="Default Changelist" comment="resturctured">
       <change afterPath="$PROJECT_DIR$/AKDPRFramework/mlops/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

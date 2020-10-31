@@ -51,9 +51,9 @@ class Regression(object):
         self.regularization = lambda x: 0
 
     def random_initialization(self, number_of_features):
-        '''
+        """
         Random initialization of weights.
-        '''
+        """
         lim = 1 / math.sqrt(number_of_features)
         self.w = np.random.uniform(-lim, lim, (number_of_features,))
 

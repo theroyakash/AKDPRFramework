@@ -11,7 +11,7 @@ class KNN:
 
         Examples::
             >>> from sklearn import datasets
-            >>> from AKDPRFramework.utils.dataops import train_test_split
+            >>> from AKDPRFramework.utils.dataops import train_test_split, normalize
             >>> data = datasets.load_iris()
             >>> X = normalize(data.data)
             >>> y = data.target

@@ -4,6 +4,14 @@ AKDPRFramework.mlops package
 Submodules
 ----------
 
+AKDPRFramework.mlops.knn module
+-------------------------------
+
+.. automodule:: AKDPRFramework.mlops.knn
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 AKDPRFramework.mlops.reg module
 -------------------------------
 

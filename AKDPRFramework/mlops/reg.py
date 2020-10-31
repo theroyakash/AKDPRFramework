@@ -82,13 +82,15 @@ class Regression(object):
     def get_weights(self):
         """
         Returns weights at the end of training.
-        Call like this
-        >>> model = LinearRegression()
-        >>> weights_before_training = model.get_weights()     # Random Initialization
-        >>> model.fit(X, y)
-        >>> weights = model.get_weights() # Updated weights after training
+
+        Examples::
+            >>> model = LinearRegression()
+            >>> weights_before_training = model.get_weights()     # Random Initialization
+            >>> model.fit(X, y)
+            >>> weights = model.get_weights() # Updated weights after training
         """
         return self.w
+
 
 class LinearRegression(Regression):
     """

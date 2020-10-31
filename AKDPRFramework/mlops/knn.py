@@ -10,16 +10,16 @@ class KNN:
             - ``k`` (int): The number of closest neighbors.
 
         Examples::
-        >>> from sklearn import datasets
-        >>> from AKDPRFramework.utils.dataops import train_test_split
-        >>> data = datasets.load_iris()
-        >>> X = normalize(data.data)
-        >>> y = data.target
-        >>> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
-        >>> from AKDPRFramework.mlops.knn import KNN
-        >>> classifier = KNN(k=6)
-        >>> predict = classifier.predict(X_test, X_train, y_train)
-        >>> print(f'Accuracy is {accuracy_score(y_test, y_pred)}')
+            >>> from sklearn import datasets
+            >>> from AKDPRFramework.utils.dataops import train_test_split
+            >>> data = datasets.load_iris()
+            >>> X = normalize(data.data)
+            >>> y = data.target
+            >>> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+            >>> from AKDPRFramework.mlops.knn import KNN
+            >>> classifier = KNN(k=6)
+            >>> predict = classifier.predict(X_test, X_train, y_train)
+            >>> print(f'Accuracy is {accuracy_score(y_test, y_pred)}')
     """
 
     def __init__(self, k):
@@ -27,9 +27,8 @@ class KNN:
 
     def vote(self, neighbor_samples):
         """
-        Voting
         Returns:
-            The most common class among the all neighbor samples.
+            - The most common class among the all neighbor samples.
         """
         count = np.bincount(neighbor_samples.astype('int'))
         return count.argmax()

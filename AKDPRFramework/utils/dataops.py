@@ -1,5 +1,5 @@
 import numpy as np
-
+import math
 
 def shuffle(X, y, seed=None):
     """
@@ -100,3 +100,14 @@ def train_test_split(X, y, test_size=0.5, makeshuffle=True, seed=None):
     y_train, y_test = y[:split_i], y[split_i:]
 
     return X_train, X_test, y_train, y_test
+
+
+def euclidean_distance(x1, x2):
+    """
+    Calculates the l2 distance between two vectors
+    """
+    distance = 0
+    # Squared distance between each coordinate
+    for i in range(len(x1)):
+        distance += pow((x1[i] - x2[i]), 2)
+    return math.sqrt(distance)
